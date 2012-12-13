@@ -31,6 +31,7 @@ gem 'rspec-expectations', '2.12.0'
 gem 'factory_girl_rails'
 gem "webrat", "~> 0.7.3"
 gem "nokogiri", "~> 1.5.5"
+gem "devise", "~> 2.1.2"
 end
 
 # To use ActiveModel has_secure_password

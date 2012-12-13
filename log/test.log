@@ -2769,3 +2769,916 @@ Completed 200 OK in 52ms (Views: 50.9ms | ActiveRecord: 0.2ms)
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
   [1m[35mSQL (0.3ms)[0m  DELETE FROM "evaluations"
   [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Teacher' LIMIT 1[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 17:23:43 UTC +00:00], ["name", "Teacher"], ["updated_at", Thu, 13 Dec 2012 17:23:43 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Student' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 17:23:43 UTC +00:00], ["name", "Student"], ["updated_at", Thu, 13 Dec 2012 17:23:43 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "evaluations"
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/newtests" for 127.0.0.1 at 2012-12-13 10:23:55 -0700
+Processing by NewtestsController#index as HTML
+  [1m[35mNewtest Load (0.1ms)[0m  SELECT "newtests".* FROM "newtests" 
+  Rendered layouts/_stylesheets.html.erb (1.6ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+Completed 200 OK in 44ms (Views: 43.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by NewtestsController#new as HTML
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by NewtestsController#update as HTML
+  Parameters: {"newtest"=>{}, "id"=>"1"}
+  [1m[35mNewtest Load (0.2ms)[0m  SELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/newtests/1
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by NewtestsController#update as HTML
+  Parameters: {"newtest"=>{"these"=>"params"}, "id"=>"1"}
+  [1m[35mNewtest Load (0.1ms)[0m  SELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by NewtestsController#update as HTML
+  Parameters: {"newtest"=>{}, "id"=>"1"}
+  [1m[35mNewtest Load (0.1ms)[0m  SELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/newtests/1
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by NewtestsController#update as HTML
+  Parameters: {"newtest"=>{}, "id"=>"1"}
+  [1m[35mNewtest Load (0.1ms)[0m  SELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by NewtestsController#update as HTML
+  Parameters: {"newtest"=>{}, "id"=>"1"}
+  [1m[35mNewtest Load (0.1ms)[0m  SELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by NewtestsController#create as HTML
+  Parameters: {"newtest"=>{}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/newtests/1
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "newtests" 
+Processing by NewtestsController#create as HTML
+  Parameters: {"newtest"=>{}}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/newtests/1
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "newtests" 
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by NewtestsController#create as HTML
+  Parameters: {"newtest"=>{}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/newtests/1
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[35mNewtest Load (0.1ms)[0m  SELECT "newtests".* FROM "newtests" ORDER BY "newtests"."id" DESC LIMIT 1
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by NewtestsController#create as HTML
+  Parameters: {"newtest"=>{}}
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by NewtestsController#create as HTML
+  Parameters: {"newtest"=>{}}
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by NewtestsController#index as HTML
+  [1m[35mNewtest Load (0.1ms)[0m  SELECT "newtests".* FROM "newtests" 
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by NewtestsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mNewtest Load (0.1ms)[0m  SELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by NewtestsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mNewtest Load (0.1ms)[0m  SELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "newtests" 
+Processing by NewtestsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNewtest Load (0.1ms)[0m  [1mSELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "newtests" WHERE "newtests"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/newtests
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "newtests" [0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by NewtestsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNewtest Load (0.1ms)[0m  [1mSELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "newtests" WHERE "newtests"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/newtests
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  Rendered newtests/_form.html.erb (8.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00], ["name", "value for name"], ["updated_at", Thu, 13 Dec 2012 17:23:55 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  Rendered newtests/_form.html.erb (1.8ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "evaluations"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "evaluations" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2012-12-13 17:26:50', '2012-12-13 17:26:50', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "evaluations" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2012-12-13 17:26:50', '2012-12-13 17:26:50', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "question_results"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "question_results" ("answer", "question_id", "created_at", "updated_at", "id") VALUES (1, 1, '2012-12-13 17:26:50', '2012-12-13 17:26:50', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "question_results" ("answer", "question_id", "created_at", "updated_at", "id") VALUES (1, 1, '2012-12-13 17:26:50', '2012-12-13 17:26:50', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "questions"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "questions" ("content", "evaluation_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2012-12-13 17:26:50', '2012-12-13 17:26:50', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "questions" ("content", "evaluation_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2012-12-13 17:26:50', '2012-12-13 17:26:50', 298486374)
+  [1m[36m (54.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "evaluations"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "evaluations" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2012-12-13 17:26:53', '2012-12-13 17:26:53', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "evaluations" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2012-12-13 17:26:53', '2012-12-13 17:26:53', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "question_results"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "question_results" ("answer", "question_id", "created_at", "updated_at", "id") VALUES (1, 1, '2012-12-13 17:26:53', '2012-12-13 17:26:53', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "question_results" ("answer", "question_id", "created_at", "updated_at", "id") VALUES (1, 1, '2012-12-13 17:26:53', '2012-12-13 17:26:53', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "questions"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "questions" ("content", "evaluation_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2012-12-13 17:26:53', '2012-12-13 17:26:53', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "questions" ("content", "evaluation_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2012-12-13 17:26:53', '2012-12-13 17:26:53', 298486374)
+  [1m[36m (54.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEvaluation Load (0.4ms)[0m  [1mSELECT "evaluations".* FROM "evaluations" WHERE "evaluations"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "evaluations" 
+Processing by EvaluationsController#create as HTML
+  Parameters: {"evaluation"=>{"id"=>"980190962", "name"=>"MyString", "created_at"=>"2012-12-13 17:26:53 UTC", "updated_at"=>"2012-12-13 17:26:53 UTC"}}
+  [1m[36mEvaluation Load (0.1ms)[0m  [1mSELECT "evaluations".* FROM "evaluations" [0m
+Completed 500 Internal Server Error in 1ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEvaluation Load (0.1ms)[0m  SELECT "evaluations".* FROM "evaluations" WHERE "evaluations"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "evaluations" [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEvaluation Load (0.1ms)[0m  SELECT "evaluations".* FROM "evaluations" WHERE "evaluations"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEvaluation Load (0.1ms)[0m  [1mSELECT "evaluations".* FROM "evaluations" WHERE "evaluations"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEvaluation Load (0.1ms)[0m  SELECT "evaluations".* FROM "evaluations" WHERE "evaluations"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EvaluationsController#new as HTML
+  [1m[36mEvaluation Load (0.1ms)[0m  [1mSELECT "evaluations".* FROM "evaluations" [0m
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered layouts/_stylesheets.html.erb (26.0ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 47ms (Views: 46.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEvaluation Load (0.1ms)[0m  SELECT "evaluations".* FROM "evaluations" WHERE "evaluations"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EvaluationsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvaluation Load (0.0ms)[0m  [1mSELECT "evaluations".* FROM "evaluations" WHERE "evaluations"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 500 Internal Server Error in 1ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEvaluation Load (0.1ms)[0m  SELECT "evaluations".* FROM "evaluations" WHERE "evaluations"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? ORDER BY questions.created_at ASC LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "questions" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? ORDER BY questions.created_at ASC LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "questions" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? ORDER BY questions.created_at ASC LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? ORDER BY questions.created_at ASC LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? ORDER BY questions.created_at ASC LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? ORDER BY questions.created_at ASC LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? ORDER BY questions.created_at ASC LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.2ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Teacher' LIMIT 1[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 17:49:18 UTC +00:00], ["name", "Teacher"], ["updated_at", Thu, 13 Dec 2012 17:49:18 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Student' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 17:49:18 UTC +00:00], ["name", "Student"], ["updated_at", Thu, 13 Dec 2012 17:49:18 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "evaluations"
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.2ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Teacher' LIMIT 1[0m
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 17:52:12 UTC +00:00], ["name", "Teacher"], ["updated_at", Thu, 13 Dec 2012 17:52:12 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Student' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 17:52:12 UTC +00:00], ["name", "Student"], ["updated_at", Thu, 13 Dec 2012 17:52:12 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "evaluations"
+  [1m[36m (44.8ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered newtests/_form.html.erb (10.9ms)
+  Rendered newtests/new.html.erb (17.4ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered newtests/_form.html.erb (2.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (5.7ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00], ["name", "value for name"], ["updated_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+
+
+Started GET "/newtests" for 127.0.0.1 at 2012-12-13 11:00:43 -0700
+Processing by NewtestsController#index as HTML
+  [1m[36mNewtest Load (0.2ms)[0m  [1mSELECT "newtests".* FROM "newtests" [0m
+  Rendered layouts/_stylesheets.html.erb (1.7ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by NewtestsController#index as HTML
+  [1m[36mNewtest Load (0.1ms)[0m  [1mSELECT "newtests".* FROM "newtests" [0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by NewtestsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNewtest Load (0.2ms)[0m  [1mSELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "newtests" [0m
+Processing by NewtestsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mNewtest Load (0.1ms)[0m  SELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "newtests" WHERE "newtests"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/newtests
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "newtests" 
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by NewtestsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mNewtest Load (0.1ms)[0m  SELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "newtests" WHERE "newtests"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/newtests
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by NewtestsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNewtest Load (0.1ms)[0m  [1mSELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by NewtestsController#update as HTML
+  Parameters: {"newtest"=>{"these"=>"params"}, "id"=>"1"}
+  [1m[36mNewtest Load (0.1ms)[0m  [1mSELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by NewtestsController#update as HTML
+  Parameters: {"newtest"=>{}, "id"=>"1"}
+  [1m[36mNewtest Load (0.1ms)[0m  [1mSELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/newtests/1
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by NewtestsController#update as HTML
+  Parameters: {"newtest"=>{}, "id"=>"1"}
+  [1m[36mNewtest Load (0.1ms)[0m  [1mSELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/newtests/1
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by NewtestsController#update as HTML
+  Parameters: {"newtest"=>{}, "id"=>"1"}
+  [1m[36mNewtest Load (0.1ms)[0m  [1mSELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by NewtestsController#update as HTML
+  Parameters: {"newtest"=>{}, "id"=>"1"}
+  [1m[36mNewtest Load (0.1ms)[0m  [1mSELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "newtests" 
+Processing by NewtestsController#create as HTML
+  Parameters: {"newtest"=>{}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/newtests/1
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "newtests" 
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by NewtestsController#create as HTML
+  Parameters: {"newtest"=>{}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/newtests/1
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by NewtestsController#create as HTML
+  Parameters: {"newtest"=>{}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 18:00:43 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/newtests/1
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[36mNewtest Load (0.1ms)[0m  [1mSELECT "newtests".* FROM "newtests" ORDER BY "newtests"."id" DESC LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by NewtestsController#create as HTML
+  Parameters: {"newtest"=>{}}
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by NewtestsController#create as HTML
+  Parameters: {"newtest"=>{}}
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by NewtestsController#new as HTML
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.2ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Teacher' LIMIT 1[0m
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 18:01:36 UTC +00:00], ["name", "Teacher"], ["updated_at", Thu, 13 Dec 2012 18:01:36 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Student' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 18:01:36 UTC +00:00], ["name", "Student"], ["updated_at", Thu, 13 Dec 2012 18:01:36 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "evaluations"
+  [1m[36m (36.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Teacher' LIMIT 1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 18:28:44 UTC +00:00], ["name", "Teacher"], ["updated_at", Thu, 13 Dec 2012 18:28:44 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Student' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 18:28:44 UTC +00:00], ["name", "Student"], ["updated_at", Thu, 13 Dec 2012 18:28:44 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "evaluations"
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Teacher' LIMIT 1[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 18:59:10 UTC +00:00], ["name", "Teacher"], ["updated_at", Thu, 13 Dec 2012 18:59:10 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Student' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 18:59:10 UTC +00:00], ["name", "Student"], ["updated_at", Thu, 13 Dec 2012 18:59:10 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "evaluations"
+  [1m[36m (45.7ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.2ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Teacher' LIMIT 1[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:01:36 UTC +00:00], ["name", "Teacher"], ["updated_at", Thu, 13 Dec 2012 19:01:36 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Student' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:01:36 UTC +00:00], ["name", "Student"], ["updated_at", Thu, 13 Dec 2012 19:01:36 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "evaluations"
+  [1m[36m (39.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Teacher' LIMIT 1[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:02:05 UTC +00:00], ["name", "Teacher"], ["updated_at", Thu, 13 Dec 2012 19:02:05 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Student' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:02:05 UTC +00:00], ["name", "Student"], ["updated_at", Thu, 13 Dec 2012 19:02:05 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "evaluations"
+  [1m[36m (40.9ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Teacher' LIMIT 1[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:16:56 UTC +00:00], ["name", "Teacher"], ["updated_at", Thu, 13 Dec 2012 19:16:56 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Student' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:16:56 UTC +00:00], ["name", "Student"], ["updated_at", Thu, 13 Dec 2012 19:16:56 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "evaluations"
+  [1m[36m (37.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Teacher' LIMIT 1[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:18:16 UTC +00:00], ["name", "Teacher"], ["updated_at", Thu, 13 Dec 2012 19:18:16 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Student' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:18:16 UTC +00:00], ["name", "Student"], ["updated_at", Thu, 13 Dec 2012 19:18:16 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "evaluations"
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Teacher' LIMIT 1[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:27:51 UTC +00:00], ["name", "Teacher"], ["updated_at", Thu, 13 Dec 2012 19:27:51 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Student' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:27:51 UTC +00:00], ["name", "Student"], ["updated_at", Thu, 13 Dec 2012 19:27:51 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "evaluations"
+  [1m[36m (44.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Teacher' LIMIT 1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:32:13 UTC +00:00], ["name", "Teacher"], ["updated_at", Thu, 13 Dec 2012 19:32:13 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Student' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:32:13 UTC +00:00], ["name", "Student"], ["updated_at", Thu, 13 Dec 2012 19:32:13 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "evaluations"
+  [1m[36m (1.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Teacher' LIMIT 1[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:38:28 UTC +00:00], ["name", "Teacher"], ["updated_at", Thu, 13 Dec 2012 19:38:28 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Student' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:38:28 UTC +00:00], ["name", "Student"], ["updated_at", Thu, 13 Dec 2012 19:38:28 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "evaluations"
+  [1m[36m (38.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered newtests/_form.html.erb (41.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.6ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00], ["name", "value for name"], ["updated_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  Rendered newtests/_form.html.erb (1.5ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+
+
+Started GET "/newtests" for 127.0.0.1 at 2012-12-13 12:38:52 -0700
+Processing by NewtestsController#index as HTML
+  [1m[36mNewtest Load (0.1ms)[0m  [1mSELECT "newtests".* FROM "newtests" [0m
+  Rendered layouts/_stylesheets.html.erb (1.5ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by NewtestsController#update as HTML
+  Parameters: {"newtest"=>{"these"=>"params"}, "id"=>"1"}
+  [1m[36mNewtest Load (0.2ms)[0m  [1mSELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by NewtestsController#update as HTML
+  Parameters: {"newtest"=>{}, "id"=>"1"}
+  [1m[36mNewtest Load (0.0ms)[0m  [1mSELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/newtests/1
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by NewtestsController#update as HTML
+  Parameters: {"newtest"=>{}, "id"=>"1"}
+  [1m[36mNewtest Load (0.1ms)[0m  [1mSELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/newtests/1
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by NewtestsController#update as HTML
+  Parameters: {"newtest"=>{}, "id"=>"1"}
+  [1m[36mNewtest Load (0.1ms)[0m  [1mSELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by NewtestsController#update as HTML
+  Parameters: {"newtest"=>{}, "id"=>"1"}
+  [1m[36mNewtest Load (0.1ms)[0m  [1mSELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "newtests" [0m
+Processing by NewtestsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mNewtest Load (0.1ms)[0m  SELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "newtests" WHERE "newtests"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/newtests
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "newtests" 
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by NewtestsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mNewtest Load (0.1ms)[0m  SELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "newtests" WHERE "newtests"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/newtests
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by NewtestsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNewtest Load (0.1ms)[0m  [1mSELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by NewtestsController#new as HTML
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "newtests" 
+Processing by NewtestsController#create as HTML
+  Parameters: {"newtest"=>{}}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/newtests/1
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "newtests" 
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by NewtestsController#create as HTML
+  Parameters: {"newtest"=>{}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/newtests/1
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+  [1m[35mNewtest Load (0.1ms)[0m  SELECT "newtests".* FROM "newtests" ORDER BY "newtests"."id" DESC LIMIT 1
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by NewtestsController#create as HTML
+  Parameters: {"newtest"=>{}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/newtests/1
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by NewtestsController#create as HTML
+  Parameters: {"newtest"=>{}}
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by NewtestsController#create as HTML
+  Parameters: {"newtest"=>{}}
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by NewtestsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNewtest Load (0.1ms)[0m  [1mSELECT "newtests".* FROM "newtests" WHERE "newtests"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "newtests" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00], ["name", nil], ["updated_at", Thu, 13 Dec 2012 19:38:52 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by NewtestsController#index as HTML
+  [1m[36mNewtest Load (0.1ms)[0m  [1mSELECT "newtests".* FROM "newtests" [0m
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "evaluations"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "evaluations" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2012-12-13 19:40:45', '2012-12-13 19:40:45', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "evaluations" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2012-12-13 19:40:45', '2012-12-13 19:40:45', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "question_results"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "question_results" ("answer", "question_id", "created_at", "updated_at", "id") VALUES (1, 1, '2012-12-13 19:40:45', '2012-12-13 19:40:45', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "question_results" ("answer", "question_id", "created_at", "updated_at", "id") VALUES (1, 1, '2012-12-13 19:40:45', '2012-12-13 19:40:45', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "questions"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "questions" ("content", "evaluation_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2012-12-13 19:40:45', '2012-12-13 19:40:45', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "questions" ("content", "evaluation_id", "created_at", "updated_at", "id") VALUES ('MyString', 1, '2012-12-13 19:40:45', '2012-12-13 19:40:45', 298486374)
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Teacher' LIMIT 1[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:43:25 UTC +00:00], ["name", "Teacher"], ["updated_at", Thu, 13 Dec 2012 19:43:25 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Student' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:43:25 UTC +00:00], ["name", "Student"], ["updated_at", Thu, 13 Dec 2012 19:43:25 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  DELETE FROM "evaluations"
+  [1m[36m (41.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.2ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Teacher' LIMIT 1[0m
+  [1m[35mSQL (126.0ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:45:30 UTC +00:00], ["name", "Teacher"], ["updated_at", Thu, 13 Dec 2012 19:45:30 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEvaluation Exists (0.1ms)[0m  [1mSELECT 1 FROM "evaluations" WHERE "evaluations"."name" = 'Student' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "evaluations" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 13 Dec 2012 19:45:30 UTC +00:00], ["name", "Student"], ["updated_at", Thu, 13 Dec 2012 19:45:30 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (28.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "evaluations"
+  [1m[36m (264.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
